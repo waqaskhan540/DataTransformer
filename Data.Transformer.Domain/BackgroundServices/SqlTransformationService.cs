@@ -40,7 +40,7 @@ namespace Data.Transformer.Domain.BackgroundServices
 
             try { 
                 //Parse and serialize csv file
-                var productsList = _productsCsvParser.ParseInBatches(file, batchSize: 1000);
+                var productsList = _productsCsvParser.ParseInBatches(file, batchSize: 5000);
 
                 //insert in database
                 foreach (var products in productsList)
