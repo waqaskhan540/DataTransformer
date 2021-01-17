@@ -76,10 +76,12 @@ To run the application in standalone mode please simply run the API project and 
 To run the application with Hangfire server follow below steps.
 
 1. Comment below code from `FileUploadController` to stop publishing notification
-> await _mediator.Publish(new FileUploadedEvent
+```
+ await _mediator.Publish(new FileUploadedEvent
                 {
                     FileName = filename
                 });
+```
                 
 2. Set both `Data.Transformer.Api` and `DataTransformer.Hangfire.Server` projects as startup projects and run both
 3. Upload `csv` file from `Swagger` 
